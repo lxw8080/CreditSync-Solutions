@@ -1,0 +1,183 @@
+// 全局样式文件
+
+// 响应式断点
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1440px;
+
+// 全局重置样式
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+// 移动端优化
+@media (max-width: $mobile) {
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-padding {
+    padding: 16px !important;
+  }
+}
+
+// 文件上传相关样式
+.file-upload-area {
+  border: 2px dashed var(--el-border-color);
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  transition: border-color 0.3s;
+  
+  &:hover {
+    border-color: var(--el-color-primary);
+  }
+  
+  &.is-dragover {
+    border-color: var(--el-color-primary);
+    background-color: var(--el-color-primary-light-9);
+  }
+}
+
+.file-list {
+  .file-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--el-border-color-lighter);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .file-info {
+      flex: 1;
+      margin-left: 8px;
+      
+      .file-name {
+        font-size: 14px;
+        color: var(--el-text-color-primary);
+      }
+      
+      .file-meta {
+        font-size: 12px;
+        color: var(--el-text-color-secondary);
+        margin-top: 4px;
+      }
+    }
+    
+    .file-actions {
+      display: flex;
+      gap: 8px;
+    }
+  }
+}
+
+// 移动端摄像头按钮
+.camera-controls {
+  display: none;
+  
+  @media (max-width: $mobile) {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    
+    .camera-btn {
+      flex: 1;
+      height: 48px;
+      font-size: 16px;
+    }
+  }
+}
+
+// 协同操作相关
+.collaboration-info {
+  background: var(--el-color-info-light-9);
+  border: 1px solid var(--el-color-info-light-7);
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 16px;
+  
+  .collaboration-title {
+    font-weight: 600;
+    color: var(--el-color-info);
+    margin-bottom: 8px;
+  }
+  
+  .collaboration-details {
+    font-size: 14px;
+    color: var(--el-text-color-regular);
+  }
+}
+
+// 时间戳显示
+.timestamp {
+  font-size: 12px;
+  color: var(--el-text-color-secondary);
+  font-family: 'Courier New', monospace;
+}
+
+// 必填项标识
+.required-field {
+  .el-form-item__label::before {
+    content: '*';
+    color: var(--el-color-danger);
+    margin-right: 4px;
+  }
+}
+
+// 状态标签
+.status-tag {
+  &.status-in-progress {
+    background-color: var(--el-color-warning-light-9);
+    color: var(--el-color-warning);
+    border-color: var(--el-color-warning-light-7);
+  }
+  
+  &.status-completed {
+    background-color: var(--el-color-success-light-9);
+    color: var(--el-color-success);
+    border-color: var(--el-color-success-light-7);
+  }
+}
+
+// 响应式表格
+.responsive-table {
+  @media (max-width: $mobile) {
+    .el-table__header {
+      display: none;
+    }
+    
+    .el-table__body {
+      .el-table__row {
+        display: block;
+        border: 1px solid var(--el-border-color);
+        border-radius: 4px;
+        margin-bottom: 12px;
+        padding: 12px;
+        
+        .el-table__cell {
+          display: block;
+          border: none;
+          padding: 4px 0;
+          
+          &::before {
+            content: attr(data-label) ': ';
+            font-weight: 600;
+            color: var(--el-text-color-regular);
+          }
+        }
+      }
+    }
+  }
+}

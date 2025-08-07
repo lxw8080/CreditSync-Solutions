@@ -1,0 +1,18 @@
+{
+  "name": "creditsync-database",
+  "version": "1.0.0",
+  "description": "客户资料收集管理系统 - 数据库迁移和种子",
+  "scripts": {
+    "migrate": "sequelize-cli db:migrate",
+    "migrate:undo": "sequelize-cli db:migrate:undo",
+    "migrate:undo:all": "sequelize-cli db:migrate:undo:all",
+    "seed": "sequelize-cli db:seed:all",
+    "seed:undo": "sequelize-cli db:seed:undo:all",
+    "setup": "./scripts/setup.sh",
+    "reset": "./scripts/reset.sh"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2",
+    "bcryptjs": "^2.4.3"
+  }
+}

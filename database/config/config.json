@@ -1,0 +1,35 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "your_password",
+    "database": "materials_db",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres",
+    "logging": true
+  },
+  "test": {
+    "username": "postgres",
+    "password": "your_password",
+    "database": "materials_db_test",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "username": "postgres",
+    "password": "your_password",
+    "database": "materials_db_prod",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres",
+    "logging": false,
+    "pool": {
+      "max": 10,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  }
+}
